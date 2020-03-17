@@ -110,8 +110,7 @@ def GetDictFromFile(fInName, sep, header):
     fIn.close()
     return [t,d]
 
-
-#Updated: May 4, 2019    
+ 
 def GetText(finName):
     '''Extracts text from a single fasta file'''
     fin = open(finName, 'r')
