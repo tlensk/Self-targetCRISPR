@@ -7,14 +7,16 @@ This folder contains files necessary to run the analysis on the test example of 
 
 
 File __list.txt__ contains accession numbers for three replicons in these two organisms.\
-This file is used to check if all required files (__.fasta__ and __.csv__) are provided for the replicons to conduct the analysis.\\
+This file is used to check if all required files (__.fasta__ and __.csv__) are provided for the replicons to conduct the analysis.
+
 _For each replicon, the corresponding __.fasta and .csv files__ should contain the replicon accession number as the file name followed by the file extention._
 
 
 ## Input files:
 * __export.txt__ (organism level statistics and information about the analyzed genome assembly downloaded from CRISPRCasdb) 
 * __20190618_spacer_34.fasta__ (a list of spacers downloaded from CRISPRCasdb)
-* __summary.txt__ (additional information about each replicon from list.txt (whether a replicon is linear or circular), this information is missing from fasta format files and needs to be obtained from NCBI separately.
+* __summary.txt__ (additional information about each replicon from list.txt (whether a replicon is linear or circular)\ 
+_This information is missing from fasta format files and needs to be obtained from NCBI separately._
 * __.fasta files__ for the replicons from list.txt (each .fasta file contains a genomic sequence of the corresponding replicon) 
 * __.csv files__ for the replicons from list.txt (each .csv file contains information about CRISPR arrays and Cas-gene clusters found in the corresponding replicon)
 
@@ -29,7 +31,8 @@ _For each replicon, the corresponding __.fasta and .csv files__ should contain t
 * __2_Acetobacte_spinfo.txt__ 
 
 _Naming convention for spinfo.txt files is the following (three parts separated by underscrore symbol):
-(a)the leading number represent the order of a given organism as it appers in export.txt followed by
-(b) ten first letters from the strain name in export.txt followed by (c) "spinfo.txt"._
+(a)the leading number represent the order of a given organism as it appers in export.txt;\
+(b) ten first letters from the strain name in export.txt;\
+(c) "spinfo.txt"._
 
 
