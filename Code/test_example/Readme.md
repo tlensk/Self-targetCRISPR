@@ -33,7 +33,7 @@ Each .csv file contains information about CRISPR arrays and Cas-gene clusters fo
 * __organisms.txt__ <br>
 The number of spacers and the number of self-targeting spacers found in the organisms of interest supplemented by the organism level statistics from export.txt
 
-## Spacer level statistics (the copies found for each spacer in a given organism):
+### Spacer level statistics (the copies found for each spacer in a given organism):
 * __1_Acetobacte_spinfo.txt__
 * __2_Acetobacte_spinfo.txt__ 
 
@@ -41,5 +41,11 @@ _Naming convention for spinfo.txt files is the following (three parts separated 
 (a) the number represents the order of a given organism as it appers in export.txt;
 (b) ten first letters from the strain name in export.txt;
 (c) "spinfo.txt"._
+
+### Wildcard spacers
+* __wildcard_spacers.txt__ <br>
+Information about the wildcard spacers that were discarded prior to the analysis.
+
+_Wildcard spacer is a spacer that contains symbols other then {T,C,A,G}, e.g., N, Y, and W._
 
 
