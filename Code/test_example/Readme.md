@@ -2,9 +2,9 @@
 
 This folder contains files necessary to run the analysis on the test example of two strains of _Acetobacteraceae bacterium_:
 
-1. ***Acetobacteraceae bacterium (a-proteobacteria) 868***,<br>
+1. ***Acetobacteraceae bacterium (a-proteobacteria) 868*** <br>
 2 replicons: chromosome (CP039460.1) and plasmid (CP039461.1)
-2. ***Acetobacteraceae bacterium (a-proteobacteria) 880***,<br>
+2. ***Acetobacteraceae bacterium (a-proteobacteria) 880*** <br>
 1 replicon: chromosome (CP039459.1)
 
 
@@ -21,7 +21,7 @@ Organism level statistics and information about the analyzed genome assembly dow
 A complete list of spacers downloaded from CRISPRCasdb
 * __summary.txt__ <br> 
 Additional information about each replicon (whether a replicon is linear or circular)<br>
-_This information is missing from fasta format files and needs to be obtained from NCBI separately.
+_This information is missing from fasta format files and needs to be obtained from NCBI separately._
 * __.fasta files__ for the replicons <br>
 Each .fasta file contains a genomic sequence of the corresponding replicon 
 * __.csv files__ for the replicons <br>
