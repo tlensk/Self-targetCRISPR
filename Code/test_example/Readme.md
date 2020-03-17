@@ -2,8 +2,8 @@
 
 This folder contains files necessary to run the analysis on the test example of two strains of Acetobacteraceae bacterium:
 
-1. ***Acetobacteraceae bacterium (a-proteobacteria) 868***, \2 replicons: chromosome (CP039460.1) and plasmid (CP039461.1)\
-2. ***Acetobacteraceae bacterium (a-proteobacteria) 880***, \1 replicon: chromosome (CP039459.1)
+1. ***Acetobacteraceae bacterium (a-proteobacteria) 868***,  2 replicons: chromosome (CP039460.1) and plasmid (CP039461.1)\
+2. ***Acetobacteraceae bacterium (a-proteobacteria) 880***,  1 replicon: chromosome (CP039459.1)
 
 
 File __list.txt__ contains accession numbers for three replicons in these two organisms.\
