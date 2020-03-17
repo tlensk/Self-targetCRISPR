@@ -4,7 +4,7 @@ This folder contains files necessary to run the analysis on the test example of 
 
 1. ***Acetobacteraceae bacterium (a-proteobacteria) 868***,
 2 replicons: chromosome (CP039460.1) and plasmid (CP039461.1)
-2. ***Acetobacteraceae bacterium (a-proteobacteria) 880***,
+2. ***Acetobacteraceae bacterium (a-proteobacteria) 880***,<br>
 1 replicon: chromosome (CP039459.1)
 
 
