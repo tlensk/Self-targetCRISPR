@@ -11,7 +11,7 @@ This folder contains files necessary to run the analysis on the test example of 
 File __list.txt__ contains accession numbers for three replicons in these two organisms.<br>
 This file is used to check if all required files (__.fasta__ and __.csv__) are provided for the replicons to conduct the analysis.
 
-_For each replicon, the corresponding __.fasta__ and __.csv__ files should contain the replicon accession number as the file name followed by the file extention._
+_For each replicon, the corresponding .fasta and .csv files should contain the replicon accession number as the file name followed by the file extention._
 
 
 ## Input files:
@@ -31,7 +31,7 @@ Each .csv file contains information about CRISPR arrays and Cas-gene clusters fo
 
 ### Organism level statistics:
 * __organisms.txt__ <br>
-The number of spacers and the number of self-targeting spacrs per organism supplemented by organism level statistics from export.txt)
+The number of spacers and the number of self-targeting spacrs per organism supplemented by organism level statistics from export.txt
 * __organisms_timing.txt__ <br>
 The processing time per organism
 
@@ -39,8 +39,8 @@ The processing time per organism
 * __1_Acetobacte_spinfo.txt__
 * __2_Acetobacte_spinfo.txt__ 
 
-_Naming convention for spinfo.txt files is the following (three parts separated by underscrore symbol): <br>
-(a)the leading number represent the order of a given organism as it appers in export.txt;<br>
+_Naming convention for spinfo.txt files is the following (three parts separated by underscrore symbol):_ <br>
+(a) the leading number represent the order of a given organism as it appers in export.txt;<br>
 (b) ten first letters from the strain name in export.txt;<br>
 (c) "spinfo.txt"._
 
