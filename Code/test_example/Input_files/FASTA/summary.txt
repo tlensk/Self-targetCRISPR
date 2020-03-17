@@ -1,0 +1,4 @@
+seq_id	seq_name	seq_length_bp	seq_type	seq_base
+CP039461.1	"Acetobacteraceae bacterium strain 868 plasmid p1, complete sequence"	20485	circular	DNA
+CP039460.1	"Acetobacteraceae bacterium strain 868 chromosome, complete genome"	2107276	circular	DNA
+CP039459.1	"Acetobacteraceae bacterium strain 880 chromosome, complete genome"	1923586	circular	DNA
