@@ -29,7 +29,7 @@ _We rebuilt the Postgres database from the dump sql file. For each sequence, we 
 
 From __export.txt__, we extracted information about the organisms that possess CRISPR arrays level 4 (6865 prokaryotes) and constructed the corresponding list of accession numbers for replicons in their genomes (__sequence_list.txt__, 13816 replicons in total). 
 
-From __20190618_spacer_34.fasta__, we obtained information about 221397 spacer entries.  We discarded spacers that contained at least one symbol other than {A,C,G,T}, i.e., "wildcard spacers" (__wildcard_spacers.txt__, 290 spacer entries) and considered only "exact" spacers for further analysis (221107 spacer entries). We found 326187 instances of exact spacers in the analyzed genomes (the same spacer string might appear in several genomes and consequently it yields several spacer instances, __Fig.1__).
+From __20190618_spacer_34.fasta__, we obtained information about 221397 spacer entries.  We discarded spacers that contained at least one symbol other than {A,C,G,T}, i.e., "wildcard spacers" (__wildcard_spacers.txt__, 290 spacer entries) and considered only "exact" spacers for further analysis (221107 spacer entries). We found 326187 instances of exact spacers in the analyzed genomes (the same spacer string might appear in several genomes and consequently it yields several spacer instances, __Fig.1__). An instance of a spacer indicates that a spacer string is present in at least one CRISPR array in a given genome (if the spacer string is present in several CRISPR arrays and/or several times in the same CRISPR array in a given genome then it yields spacer copies, i.e., spacer duplicates).
 
 ![Fig.1](/images/wildcard_spacerinstance.png)
 
