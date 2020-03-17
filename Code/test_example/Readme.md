@@ -16,13 +16,13 @@ _For each replicon, the corresponding .fasta and .csv files should contain the r
 
 ## Input files:
 * __export.txt__ <br>
-Organism level statistics and information about the analyzed genome assemblies downloaded from CRISPRCasdb 
+Organism level statistics and information about the analyzed genome assemblies for the organisms of interest downloaded from CRISPRCasdb 
 * __20190618_spacer_34.fasta__ <br>
 A complete list of spacers downloaded from CRISPRCasdb
 * __summary.txt__ <br> 
 Additional information about each replicon (in the first place whether a replicon is linear or circular)<br>
 _This information is missing from fasta format files and needs to be obtained from NCBI separately._
-* __.fasta files__ for the replicons <br>
+* __.fasta files__ for the replicons  list.txt<br>
 Each .fasta file contains a genomic sequence of the corresponding replicon 
 * __.csv files__ for the replicons <br>
 Each .csv file contains information about CRISPR arrays and Cas-gene clusters found in the corresponding replicon
@@ -31,7 +31,7 @@ Each .csv file contains information about CRISPR arrays and Cas-gene clusters fo
 
 ### Organism level statistics:
 * __organisms.txt__ <br>
-The number of spacers and the number of self-targeting spacrs per organism supplemented by organism level statistics from export.txt
+The number of spacers and the number of self-targeting spacers found in the organisms of interest supplemented by the organism level statistics from export.txt
 * __organisms_timing.txt__ <br>
 The processing time per organism
 
@@ -40,8 +40,8 @@ The processing time per organism
 * __2_Acetobacte_spinfo.txt__ 
 
 _Naming convention for spinfo.txt files is the following (three parts separated by underscrore symbol):
-(a) the leading number represent the order of a given organism as it appers in export.txt;
-(b) ten first letters from the strain name in export.txt;<br>
+(a) the number represents the order of a given organism as it appers in export.txt;
+(b) ten first letters from the strain name in export.txt;
 (c) "spinfo.txt"._
 
 
