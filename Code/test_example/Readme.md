@@ -16,11 +16,11 @@ _For each replicon, the corresponding .fasta and .csv files should contain the r
 
 ## Input files:
 * __export.txt__ <br>
-Organism level statistics and information about the analyzed genome assembly downloaded from CRISPRCasdb 
+Organism level statistics and information about the analyzed genome assemblies downloaded from CRISPRCasdb 
 * __20190618_spacer_34.fasta__ <br>
 A complete list of spacers downloaded from CRISPRCasdb
 * __summary.txt__ <br> 
-Additional information about each replicon (whether a replicon is linear or circular)<br>
+Additional information about each replicon (in the first place whether a replicon is linear or circular)<br>
 _This information is missing from fasta format files and needs to be obtained from NCBI separately._
 * __.fasta files__ for the replicons <br>
 Each .fasta file contains a genomic sequence of the corresponding replicon 
@@ -39,8 +39,8 @@ The processing time per organism
 * __1_Acetobacte_spinfo.txt__
 * __2_Acetobacte_spinfo.txt__ 
 
-_Naming convention for spinfo.txt files is the following (three parts separated by underscrore symbol):_ <br>
-(a) the leading number represent the order of a given organism as it appers in export.txt;<br>
+_Naming convention for spinfo.txt files is the following (three parts separated by underscrore symbol):
+(a) the leading number represent the order of a given organism as it appers in export.txt;
 (b) ten first letters from the strain name in export.txt;<br>
 (c) "spinfo.txt"._
 
