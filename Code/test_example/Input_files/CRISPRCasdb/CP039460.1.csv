@@ -1,0 +1,10 @@
+id,class,name
+5ff76f31-4974-4410-8867-af76ced631ab,Sequence,CP039460.1|ANONYMOUS Chromosome
+
+id,class,name,start,length,type
+bbf3ca17-84fd-4902-ac09-ffb68e94d2b6,ClusterCAS,CP039460.1|CAS-TypeIIC_1,833708,4206,CAS-TypeIIC
+7586b4b5-34ed-4920-b627-49d68f3063fc,ClusterCAS,CP039460.1|CAS-TypeIF_2,1021099,8783,CAS-TypeIF
+
+id,class,name,start,length,orientation,level,DRconsensus
+42bb39d3-3ee8-466d-957a-0948cb4fb000,LocusCRISPR,CP039460.1_1,1018408,2490,2,4,TTTCTAAGCTGCCTGTGCGGCAGTGAAC
+

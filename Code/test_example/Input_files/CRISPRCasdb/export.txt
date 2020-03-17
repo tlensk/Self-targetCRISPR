@@ -1,0 +1,3 @@
+Strain name	Super kingdom	Release date	SEQ count	CAS count	CRISPR count			
+Bacteria	Acetobacteraceae bacterium (a-proteobacteria) 868	2019-04	2	2	1	|GCA_004843345.1||Acetobacteraceae bacterium (a-proteobacteria) 868|CP039461.1|p1 Plasmid|CP039460.1|ANONYMOUS Chromosome	4	Bacteria
+Bacteria	Acetobacteraceae bacterium (a-proteobacteria) 880	2019-04	1	2	3	|GCA_004843165.1||Acetobacteraceae bacterium (a-proteobacteria) 880|CP039459.1|ANONYMOUS Chromosome	14	Bacteria
