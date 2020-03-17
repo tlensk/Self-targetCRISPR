@@ -11,8 +11,8 @@ Computational analysis of CRISPR-Cas systems and their autoimmunity potential in
 The following three files were downloaded from CRISPRCasdb (Pourcel et al., 2020) accessed in February 2020:
 
 1. __export.xlsx__ <br> 
-a xlsx file from Strain list section (filters: CRISPR level 4, Bacteria and Archaea): <br>
-We saved this xlsx file as tab-delimited txt file __export.txt__ for the further analysis. <br>
+a xlsx file from Strain list section (filters: CRISPR level 4, Bacteria and Archaea) <br>
+We saved this xlsx file as tab-delimited txt file __export.txt__ for the further analysis <br>
 https://crisprcas.i2bc.paris-saclay.fr/MainDb/StrainList
 
 
@@ -29,7 +29,7 @@ _We rebuilt the Postgres database from the dump sql file. For each sequence, we 
 
 From __export.txt__, we extracted information about the organisms that possess CRISPR arrays level 4 (6865 prokaryotes) and constructed the corresponding list of accession numbers for replicons in their genomes (__sequence_list.txt__, 13816 replicons in total). 
 
-From __20190618_spacer_34.fasta__, we obtained information about 221397 spacer entries.  We discarded spacers that contained at least one symbol other than {A,C,G,T}, i.e., "wildcard spacers" (__wildcard_spacers.txt__, 290 spacer entries) and considered only "exact" spacers for further analysis (221107 spacer entries). We found 326187 instances of exact spacers in the analyzed genomes (the same spacer string might appear in several genomes and consequently it yields several spacer instances, Fig.1).
+From __20190618_spacer_34.fasta__, we obtained information about 221397 spacer entries.  We discarded spacers that contained at least one symbol other than {A,C,G,T}, i.e., "wildcard spacers" (__wildcard_spacers.txt__, 290 spacer entries) and considered only "exact" spacers for further analysis (221107 spacer entries). We found 326187 instances of exact spacers in the analyzed genomes (the same spacer string might appear in several genomes and consequently it yields several spacer instances, __Fig.1__).
 
 ![Fig.1](/images/wildcard_spacerinstance.png)
 
@@ -50,11 +50,11 @@ Instead of using an alignment-based approach, we use an “exact matching” app
 
 The results of this analysis on the CRISPRCasdb data are stored in the following file: __CRISPRCasdb_organisms.txt__ and can be found in the Supplementary Materials. This file contained the number of spacers and the number of self-targeting spacers found in the organisms of interest supplied by the organism level statistics from export.txt. The core methods for the analysis of self-targeting events are implemented in Python 3 and stored in __Find_ST.py__ file availabe in Code directory. 
 
-The calculation of the number of spacers and the number of self-targeting spacers for a set of two "abstract" organisms is illustrated on Fig.2.
+The calculation of the number of spacers and the number of self-targeting spacers for a set of two "abstract" organisms is illustrated on __Fig.2__.
 
 ![Fig.2](/images/Stat_desc.png)
 __Fig.2.__ The calculation of spacers and self-targeting spacers for "abstract" organisms.
 
 Reference
 
-Pourcel, C., Touchon, M., Villeriot, N., Vernadet, J. P., Couvin, D., Toffano-Nioche, C., & Vergnaud, G. (2020). CRISPRCasdb a successor of CRISPRdb containing CRISPR arrays and Cas genes from complete genome sequences, and tools to download and query lists of repeats and spacers. Nucleic acids research, 48(D1), D535-D544.
+Pourcel, C., Touchon, M., Villeriot, N., Vernadet, J. P., Couvin, D., Toffano-Nioche, C., & Vergnaud, G. (2020). CRISPRCasdb a successor of CRISPRdb containing CRISPR arrays and Cas genes from complete genome sequences, and tools to download and query lists of repeats and spacers. _Nucleic acids research_, 48(D1), D535-D544.
