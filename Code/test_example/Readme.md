@@ -3,11 +3,11 @@
 This folder contains files necessary to run the analysis on the test example of two strains of Acetobacteraceae bacterium:
 
 (1) ***Acetobacteraceae bacterium (a-proteobacteria) 868***, 2 replicons: chromosome (CP039460.1) and plasmid (CP039461.1)\
-(2) ***Acetobacteraceae bacterium (a-proteobacteria) 880***, 1 replicon: chromosome (CP039459.1)\
+(2) ***Acetobacteraceae bacterium (a-proteobacteria) 880***, 1 replicon: chromosome (CP039459.1)
 
 
 File __list.txt__ contains accession numbers for three replicons in these two organisms.\
-This file is used to check if all required files (__.fasta__ and __.csv__) are provided for the replicons to conduct the analysis.
+This file is used to check if all required files (__.fasta__ and __.csv__) are provided for the replicons to conduct the analysis.\\
 _For each replicon, the corresponding __.fasta and .csv files__ should contain the replicon accession number as the file name followed by the file extention._
 
 
