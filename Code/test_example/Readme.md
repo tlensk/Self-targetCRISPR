@@ -2,8 +2,8 @@
 
 This folder contains files necessary to run the analysis on the test example of two strains of Acetobacteraceae bacterium:
 
-(1) ***Acetobacteraceae bacterium (a-proteobacteria) 868***, 2 replicons: chromosome (CP039460.1) and plasmid (CP039461.1)\
-(2) ***Acetobacteraceae bacterium (a-proteobacteria) 880***, 1 replicon: chromosome (CP039459.1)
+1. ***Acetobacteraceae bacterium (a-proteobacteria) 868***, \2 replicons: chromosome (CP039460.1) and plasmid (CP039461.1)\
+2. ***Acetobacteraceae bacterium (a-proteobacteria) 880***, \1 replicon: chromosome (CP039459.1)
 
 
 File __list.txt__ contains accession numbers for three replicons in these two organisms.\
@@ -13,12 +13,17 @@ _For each replicon, the corresponding __.fasta and .csv files__ should contain t
 
 
 ## Input files:
-* __export.txt__ (organism level statistics and information about the analyzed genome assembly downloaded from CRISPRCasdb) 
-* __20190618_spacer_34.fasta__ (a list of spacers downloaded from CRISPRCasdb)
-* __summary.txt__ (additional information about each replicon from list.txt (whether a replicon is linear or circular)\ 
+* __export.txt__\ 
+Organism level statistics and information about the analyzed genome assembly downloaded from CRISPRCasdb 
+* __20190618_spacer_34.fasta__\
+A complete list of spacers downloaded from CRISPRCasdb
+* __summary.txt__ \ 
+Additional information about each replicon (whether a replicon is linear or circular)\ 
 _This information is missing from fasta format files and needs to be obtained from NCBI separately._
-* __.fasta files__ for the replicons from list.txt (each .fasta file contains a genomic sequence of the corresponding replicon) 
-* __.csv files__ for the replicons from list.txt (each .csv file contains information about CRISPR arrays and Cas-gene clusters found in the corresponding replicon)
+* __.fasta files__ for the replicons \
+Each .fasta file contains a genomic sequence of the corresponding replicon 
+* __.csv files__ for the replicons \ 
+Each .csv file contains information about CRISPR arrays and Cas-gene clusters found in the corresponding replicon
 
 ## Output files:
 
