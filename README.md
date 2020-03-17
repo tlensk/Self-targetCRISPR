@@ -53,7 +53,7 @@ The results of this analysis on the CRISPRCasdb data are stored in the following
 The calculation of the number of spacers and the number of self-targeting spacers for a set of two "abstract" organisms is illustrated on __Fig.2__.
 
 ![Fig.2](/images/Stat_desc.png)
-__Fig.2.__ The calculation of spacers and self-targeting spacers for "abstract" organisms.
+__Fig.2.__ The calculation of the number of spacers and the number of self-targeting spacers for a toy set of organisms.
 
 Reference
 
