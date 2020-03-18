@@ -63,16 +63,14 @@ This file contained the number of spacers and the number of self-targeting space
 * __CRISPRCasdb_spacers.zip__ <br>
 This zip archive contains CRISPRCasdb_spacer.txt (~39 Mb) that includes information about spacers found in a given organism for all the organisms of interest combined. It also includes information about spacer length, whether a spacer is located on a plasmid, and whether the CRISPR array bearing a spacer is functional (whether it is accompanied by at least one cluster of Cas genes). 
 
+<br>
 
-The calculation of the number of spacers and the number of self-targeting spacers for a set of two "abstract" organisms is illustrated on __Fig.2__.
+The calculation of the number of spacers and the number of self-targeting spacers for a toy set of two organisms is illustrated on __Fig.2__.
 
 ![Fig.2](/images/Stat_desc.png)
 __Fig.2.__ The calculation of the number of spacers and the number of self-targeting spacers for a toy set of organisms.
 
-
-
 <br><br><br>
-
 References
 
 1. Pourcel, C., Touchon, M., Villeriot, N., Vernadet, J. P., Couvin, D., Toffano-Nioche, C., & Vergnaud, G. (2020). CRISPRCasdb a successor of CRISPRdb containing CRISPR arrays and Cas genes from complete genome sequences, and tools to download and query lists of repeats and spacers. _Nucleic acids research_, 48(D1), D535-D544.
