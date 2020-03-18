@@ -1,5 +1,5 @@
 """
-Updated on 03/17/20
+Updated on 03/18/20
 @author: Tatiana Lenskaia
 """
 
@@ -110,7 +110,8 @@ def GetDictFromFile(fInName, sep, header):
     fIn.close()
     return [t,d]
 
- 
+
+#Updated: May 4, 2019    
 def GetText(finName):
     '''Extracts text from a single fasta file'''
     fin = open(finName, 'r')
@@ -164,14 +165,13 @@ def CreateDictLocD_upper(text, m, gtp = "l"):
     return d_g;	
 
 
-def SearchOrganism(name,count, ddd, d_rep_sps, d_fname):
+def SearchOrganism_plm_cas(fRname, name,kind, count, ddd, d_rep_sps, d_fname):
+    '''Analyzes self-targeting events in a given organism'''
     ct_chr = 0
     ct_plm = 0
     ct_other = 0
        
     d_sps = {}
-    
-    fOutSPName  = path+"Output_files\\"+str(count)+"_"+name[:10]+"_spinfo.txt"
 
     for seq in ddd:
         
@@ -203,10 +203,48 @@ def SearchOrganism(name,count, ddd, d_rep_sps, d_fname):
     #print(d_sps,"\n")
     
     d_res = {}
+    d_gcas = {}
+    d_gcrs = {}
+    
+    sep2 = ","
+    
+    for rep in d_gens[name] :
+        fIn1 = open(path+"Input_files\\CRISPRCasdb\\"+rep+".csv","r")
+        lines1 = fIn1.readlines()
+        d_crs = {}
+        d_cas = {}
+        for ln in lines1:
+            ln = ln.strip()
+            if (ln != ""):
+                t_ln = ln.split(sep2)
+        
+                r_id = t_ln[0]
+                r_class = t_ln[1]
+                r_name = t_ln[2]
+                
+        
+                if r_class.lower() == "locuscrispr":
+                    if r_id not in d_crs:
+                        d_crs[r_id] = t_ln[2:]
+                        
+                if r_class.lower() == "clustercas":
+                    if r_id not in d_cas:
+                        d_cas[r_id] = t_ln[2:]
+                            
+                        
+        fIn1.close()
+    
+        d_gcas[rep] = d_cas
+        d_gcrs[rep] = d_crs
+
+    
     
     for nn in d_sps:
         
         for rep in d_gens[name] :
+            
+            d_crs = d_gcrs[rep]
+            d_cas = d_gcas[rep]
             
             fInName = path+"Input_files\\FASTA\\"+rep+".fasta"
             
@@ -216,38 +254,12 @@ def SearchOrganism(name,count, ddd, d_rep_sps, d_fname):
                 print("Mismatch!!!")
             else:
                 d_b = CreateDictLocD_upper(text,nn,d_fname[rep][2])
-                
-                sep2 = ","
-                
-                fIn1 = open(path+"Input_files\\CRISPRCasdb\\"+rep+".csv","r")
-                lines1 = fIn1.readlines()
-                d_crs = {}
-                for ln in lines1:
-                    ln = ln.strip()
-                    if (ln != ""):
-                        t_ln = ln.split(sep2)
-            
-                        r_id = t_ln[0]
-                        r_class = t_ln[1]
-                        r_name = t_ln[2]
-                        
-        
-                        if r_class.lower() == "locuscrispr":
-                            if r_id not in d_crs:
-                                d_crs[r_id] = t_ln[2:]
-                fIn1.close()
-                
-                
-              
+
            
                 for sp in d_sps[nn]:
-                    
-
                     sp_rc = Rev_cmp_upper(sp)
-
                     sp_len = len(sp)
-                    
-                    
+                                  
                     # sp spacer
                     # nn length of a spaccer                  
                     
@@ -294,6 +306,7 @@ def SearchOrganism(name,count, ddd, d_rep_sps, d_fname):
                             
                             for it in d_crs:
                                 ttt = d_crs[it]
+                                
                                 if (pos >= int(ttt[1])) and (pos+sp_len <= int(ttt[1])+int(ttt[2])):
                                     fl = 1
                                     break
@@ -317,14 +330,14 @@ def SearchOrganism(name,count, ddd, d_rep_sps, d_fname):
                             d_res[sp][rep] = [c_dir,c_rev, c_in, c_out]
                         else:
                             print("Duplicate seq", rep)
-                d_b.clear()   
-
+                d_b.clear()
+                
+                
     
     num_sp = len(d_res)
     num_stsp = 0
-    fOutSP = open(fOutSPName,"w")
-    print("Spacer","total_cp","in_cp(spacer duplicates)","out_cp(targets)", file = fOutSP, sep = "\t")
-    fOutSP.close()
+    
+    
     for sp in d_res:
 
         sp_total = 0
@@ -332,6 +345,8 @@ def SearchOrganism(name,count, ddd, d_rep_sps, d_fname):
         sp_out = 0
         sp_dir = 0
         sp_rev = 0
+        
+        sp_len = len(sp)
         
         for rep in d_res[sp]:
             total = d_res[sp][rep][0]+d_res[sp][rep][1]
@@ -345,11 +360,56 @@ def SearchOrganism(name,count, ddd, d_rep_sps, d_fname):
         if sp_out > 0:
             num_stsp = num_stsp + 1
         
-        fOutSP = open(fOutSPName,"a")
-        print(sp, sp_total, sp_in, sp_out, file = fOutSP, sep = "\t")
+        
+        
+        
+
+        cas_ind = ""
+        st_ind = ""
+        plm_ind = ""
+        
+        if sp_len in d_sps:
+            d_len_sps = d_sps[sp_len]
+    
+
+            
+            
+            t_cas = []
+            fl_plm = 0
+            for it in d_len_sps[sp]:
+                
+                d_cas = d_gcas[it]
+                t_cas.append(d_cas)
+                if "plasmid" in d_gens[name][it].lower():
+                    fl_plm = 1
+            
+            if fl_plm == 0:
+                plm_ind = "No"
+            else:
+                plm_ind = "Yes"
+                
+                
+             
+            flag = 0
+            for jj in range(len(t_cas)):
+                if len(t_cas[jj]) > 0:
+                    flag = 1
+                    
+            if flag ==1:
+                cas_ind = "Yes"
+            else:
+                cas_ind = "No"
+        
+        if sp_out > 0:
+            st_ind = "Yes"
+        else:
+            st_ind = "No"
+            
+        
+        fOutSP = open(fRname,"a")
+        print(kind,name,sp,len(sp), sp_total, sp_in, sp_out, st_ind,plm_ind,cas_ind, file = fOutSP, sep = "\t")
         fOutSP.close()
-    
-    
+        
 
     return [ct_chr, ct_plm,ct_other, num_sp, num_stsp]
     
@@ -360,7 +420,7 @@ def SearchOrganism(name,count, ddd, d_rep_sps, d_fname):
 #============================================
 #-------------partA (summary file)
 
-# Summary of the sequences in the genome
+# Summary for replicons in genomes
 fInName = path+"Input_files\\FASTA\\summary.txt"
 res = GetDictFromFile(fInName,"\t",0)
 d_fname = res[1]
@@ -466,7 +526,7 @@ for sp in d:
 
 #-------------------Main part-------------------
 
-
+# The analysis of self-targeting events in the organisms of interest listed in export.txt
 fInName = path+"Input_files\\CRISPRCasdb\\export.txt"
 print("Read-in",fInName.rsplit("\\",1)[1],"\n")
 
@@ -497,19 +557,26 @@ d_reps = {}
 
 
 
-
+# Organism level statistics
 fResName = path+"Output_files\\organisms.txt"
 fRes = open(fResName,"w")
 print("Order","Super kindom","Strain name", "Release date", "SEQ count","CAS count","CRISPR count","Assembly description","Number of spacers","Number of self-targeting spacers",file = fRes, sep = "\t")
 fRes.close()
 
-# d_gens links organisms to its sequences:
+# d_gens links organisms to its replicons:
 # keys = organism names
-# values = the corresponding sequences
+# values = the corresponding replicons
 
-# d_reps links sequences to the corresponding organism
-# keys = sequence accession numbers
+# d_reps links replicons to the corresponding organism
+# keys = replicon accession numbers
 # values = the corresponding organism name
+
+
+# Spacer level statistics
+fRname = path+"Output_files\\spacers.txt"
+fOutSP = open(fRname,"w")
+print("Super kindom","Strain name","Spacer","Spacer_length","total_cp","in_cp(spacer duplicates)","out_cp(targets)", "Self-targeting","On_plasmid","Cas_genes", file = fOutSP, sep = "\t")
+fOutSP.close()
 
 
 print("Num | Organism |Time,sec.")
@@ -526,8 +593,10 @@ for line in lines:
         
         t_line = line.split(sep)
     
+        kind = t_line[0]
         name = t_line[1]
         info = t_line[6]
+        
         
         
         
@@ -561,8 +630,7 @@ for line in lines:
                 
                 d_gens[name] = dd
         
-                
-                res = SearchOrganism(name,ct, d_gens[name], d_rep_sps, d_fname)
+                res = SearchOrganism_plm_cas(fRname, name,kind,ct, d_gens[name], d_rep_sps, d_fname)
             
                 s_line = sep.join(line.split(sep)[0:(-2)])  
                 
