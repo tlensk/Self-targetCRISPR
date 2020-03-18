@@ -27,7 +27,7 @@ https://crisprcas.i2bc.paris-saclay.fr/Home/Download
 _We rebuilt the Postgres database from the dump sql file. For each sequence, we created a separate (comma-delimited) file with the sequence accession number as its name and ".csv" as the extension to store information about the found CRISPR arrays and Cas gene clusters extracted from entity, region, crisprlocus, and clustercas tables (Postgres). We uploaded the .csv files for the test example to this repository (test_example folder)._
 
 
-From __export.txt__, we extracted information about the organisms that possess CRISPR arrays level 4 (6865 prokaryotes) and constructed the corresponding list of accession numbers for replicons in their genomes (__sequence_list.txt__, 13816 replicons in total). 
+From __export.txt__, we extracted information about the organisms that possess CRISPR arrays level 4 (6865 prokaryotes) and constructed the corresponding list of accession numbers for replicons in their genomes (__list.txt__, 13816 replicons in total). 
 
 From __20190618_spacer_34.fasta__, we obtained information about 221397 spacer entries.  We discarded spacers that contained at least one symbol other than {A,C,G,T}, i.e., "wildcard spacers" (__wildcard_spacers.txt__, 290 spacer entries) and considered only "exact" spacers for further analysis (221107 spacer entries). We found 326187 instances of exact spacers in the analyzed genomes (the same spacer string might appear in several genomes and consequently it yields several spacer instances, __Fig.1__). An instance of a spacer indicates that a spacer string is present in at least one CRISPR array in a given genome (if the spacer string is present in several CRISPR arrays and/or several times in the same CRISPR array in a given genome then it yields spacer copies, i.e., spacer duplicates).
 
@@ -45,15 +45,32 @@ _We uploaded fasta files and the corresponding short version of export.txt, list
 
 ## Part II. Analysis of self-targeting events in Bacteria and Archaea
 
+### Algorithm description
 Instead of using an alignment-based approach, we use an “exact matching” approach inspired by the CRISPR mechanism itself. To search for exact matches and to accurately determine the location of the found matches, we utilized our dictionary-based methods. Our approach is made efficient by using a dictionary (hash table) data structure. To search for self-targeting spacers in a genome, we took information about found CRISPR arrays in the genome and grouped all the found spacers by length. For each of spacer lengths, we created a dictionary of the strings found in a genome with the unique strings of a given length as the keys and the lists of positions of these strings in the genome as the values. Then, we searched each dictionary for all spacers of that length. To find copies on the forward and reverse strands, we searched the dictionary for the spacer itself and its reverse complement. As a result, for each spacer, we recorded all position(s) of the copies found for this spacer on all replicons in the genome and compared these positions to the location of CRISPR arrays in the genome. This helped us accurately distinguish between duplicate spacers and matched strings located outside CRISPR arrays and precisely identify self-targeting spacers. After we benchmarked our methods on the dataset employed by Stern et al.<sup>2</sup>(see Benchmark.xlsx in the Supplementary Materials), we conducted a similar analysis on the latest dataset available at CRISPRCasdb (June, 2019), a successor of CRISPRdb<sup>3</sup>.
 
+### Algorithm implementation
+The core methods for the analysis of self-targeting events are implemented in Python 3 and stored in __Find_ST.py__ file availabe in Code directory. 
 
-The results of this analysis on the CRISPRCasdb data are stored in the following file: __CRISPRCasdb_organisms.txt__ and can be found in the Supplementary Materials. This file contained the number of spacers and the number of self-targeting spacers found in the organisms of interest supplied by the organism level statistics from export.txt. The core methods for the analysis of self-targeting events are implemented in Python 3 and stored in __Find_ST.py__ file availabe in Code directory. 
+### Results for the CRISPRCasdb dataset
+
+The results of this analysis conducted on the CRISPRCasdb data are available in the Supplementary Materials: 
+
+#### Organism level statistics:
+* __CRISPRCasdb_organisms.txt__  <br>
+This file contained the number of spacers and the number of self-targeting spacers found in the organisms of interest accompanied by the organism level statistics from export.txt.
+
+#### Spacer level statistics:
+* __CRISPRCasdb_spacers.zip__ <br>
+This zip archive contains CRISPRCasdb_spacer.txt (~39 Mb) that includes information about spacers found in a given organism for all the organisms of interest combined. It also includes information about spacer length, whether a spacer is located on a plasmid, and whether the CRISPR array bearing a spacer is functional (whether it is accompanied by at least one cluster of Cas genes). 
+
 
 The calculation of the number of spacers and the number of self-targeting spacers for a set of two "abstract" organisms is illustrated on __Fig.2__.
 
 ![Fig.2](/images/Stat_desc.png)
 __Fig.2.__ The calculation of the number of spacers and the number of self-targeting spacers for a toy set of organisms.
+
+
+
 
 References
 
