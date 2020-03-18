@@ -57,11 +57,11 @@ The results of this analysis conducted on the CRISPRCasdb data are available in 
 
 #### Organism level statistics:
 * __CRISPRCasdb_organisms.txt__  <br>
-The number of spacers and the number of self-targeting spacers found in the organisms of interest during the analysis supplemented by the organism level statistics from export.txt.
+The number of spacers and the number of self-targeting spacers found by our methods in the organisms of interest supplemented by the organism level statistics from export.txt.
 
 #### Spacer level statistics:
 * __CRISPRCasdb_spacers.zip__ <br>
-This zip archive contains __CRISPRCasdb_spacer.txt__ (~39 Mb) that provides the detailed information about the analysis of spacers found in a given organism by our methods for all the organisms of interest combined. This information also includes spacer length, whether a spacer is located on a plasmid, and whether CRISPR array bearing a spacer is functional (whether it is accompanied by at least one cluster of Cas genes).
+This zip archive contains __CRISPRCasdb_spacer.txt__ (~39 Mb) that provides the detailed information about the analysis of spacers found in a given organism by our methods for all the organisms of interest combined. This information also includes spacer length, whether a spacer is located on a plasmid, and whether a CRISPR array bearing a spacer is functional (whether it is accompanied by at least one cluster of Cas genes).
 <br>
 
 The calculation of the number of spacers and the number of self-targeting spacers for a toy set of two organisms is illustrated on __Fig.2__.
