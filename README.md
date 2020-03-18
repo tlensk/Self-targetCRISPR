@@ -72,6 +72,8 @@ __Fig.2.__ The calculation of the number of spacers and the number of self-targe
 
 
 
+
+
 References
 
 1. Pourcel, C., Touchon, M., Villeriot, N., Vernadet, J. P., Couvin, D., Toffano-Nioche, C., & Vergnaud, G. (2020). CRISPRCasdb a successor of CRISPRdb containing CRISPR arrays and Cas genes from complete genome sequences, and tools to download and query lists of repeats and spacers. _Nucleic acids research_, 48(D1), D535-D544.
