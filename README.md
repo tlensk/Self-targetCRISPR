@@ -61,7 +61,7 @@ The number of spacers and the number of self-targeting spacers found by our meth
 
 #### Spacer level statistics:
 * __CRISPRCasdb_spacers.zip__ <br>
-This zip archive contains __CRISPRCasdb_spacer.txt__ (~39 Mb) that provides the detailed information about the analysis of spacers found in a given organism by our methods for all the organisms of interest combined. This information also includes spacer length, whether a spacer is located on a plasmid, and whether a CRISPR array bearing a spacer is functional (whether it is accompanied by at least one cluster of Cas genes).
+This zip archive contains only one file as a way to compress __CRISPRCasdb_spacer.txt__ (~39 Mb) that provides the detailed information about the analysis of spacers found in a given organism by our methods for all the organisms of interest combined. This information also includes spacer length, whether a spacer is located on a plasmid, and whether a CRISPR array bearing a spacer is functional (whether it is accompanied by at least one cluster of Cas genes).
 <br>
 
 The calculation of the number of spacers and the number of self-targeting spacers for a toy set of two organisms is illustrated on __Fig.2__.
