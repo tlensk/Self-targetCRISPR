@@ -57,7 +57,7 @@ The results of this analysis conducted on the CRISPRCasdb data are available in 
 
 #### Organism level statistics:
 * __CRISPRCasdb_organisms.txt__  <br>
-The number of spacers and the number of self-targeting spacers found by our methods in the organisms of interest supplemented by the organism level statistics from export.txt.
+This file contains information from the table downloaded from CRISPCasdb (export.txt) augmented with 2 columns showing the number of spacers and the number of self-targeting spacers found by our methods in the organisms of interest.
 
 #### Spacer level statistics:
 * __CRISPRCasdb_spacers.zip__ <br>
