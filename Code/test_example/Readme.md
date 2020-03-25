@@ -31,7 +31,7 @@ Each .csv file contains information about CRISPR arrays and Cas-gene clusters fo
 
 ### Organism level statistics:
 * __organisms.txt__ <br>
-The number of spacers and the number of self-targeting spacers found by our methods in the organisms of interest supplemented by the organism level statistics from export.txt.
+This file contains information from the table downloaded from CRISPCasdb (export.txt) augmented with 2 columns showing the number of spacers and the number of self-targeting spacers found by our methods in the organisms of interest.
 
 ### Spacer level statistics:
 * __spacer.txt__ <br>
