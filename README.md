@@ -64,9 +64,14 @@ This file contains information from the table downloaded from CRISPCasdb (export
 This zip archive contains only one file as a way to compress __CRISPRCasdb_spacer.txt__ (~39 Mb) that provides the detailed information about the analysis of spacers found in a given organism by our methods for all the organisms of interest combined. This information also includes spacer length, whether a spacer is located on a plasmid, and whether a CRISPR array bearing a spacer is functional (whether it is accompanied by at least one cluster of Cas genes).
 <br>
 
-The calculation of the number of spacers and the number of self-targeting spacers for a toy set of two organisms is illustrated on __Fig.2__.
+The calculation of the number of spacers and the number of self-targeting spacers for a toy set of two organisms is illustrated on __Fig.2__. The genome of Organism1 (Fig.2A) consists of three sequences: one chromosome and two plasmids. This organism has 4 CRISPR arrays: 3 of them are located on the chromosome and one array is located on Plasmid1. The identifier for a CRISPR array includes sequence id and the sequential number of an array within the sequence, e.g. Seq1_CRISPRarray1 and Seq1_CRISPRarray2. A spacer can be present in several CRISPR array in the genome, e.g., SpacerA in Organism1 has duplicates in three of the four arrays within the genome (SpacerA.1, SpacerA.2, and SpacerA.3). If a given spacer has matches in the genome outside CRISPR array (i.e., targets), we assign the corresponding spacer letter to such target, e.g., targetA is related to SpacerA. If a spacer has more than one target, e.g., SpacerF in Organism1, we use sequential numbering, i.e., targetF.1 and targetF.2. to indicate that these targets are different entities in the genome. The genome of Organism2 (Fig.2B) consists of two chromosomes, and it does not contain plasmids. This organism has 2 CRISPR arrays on Chromosome II. 
+<br>
+Although organisms can have the same string in their CRISPR arrays, this string actually refers to distinct spacers in their genomes. Self-targeting is meaningful in the context of a given genome. Although SpacerA is self-targeting spacer in Organism1 (Fig.2C), it is not a self-targeting spacer in Organism2 (Fig.2D).
+<br>
+For each spacer present in CRISPR array(s) of a given organism, we search for all the matches in the genome of this organism (matches in total). Spacer matches within CRISPR arrays represent spacer duplicates (spacer copies), and spacer matches outside CRISPR arrays represent targets. Then we summarized these findings with respect to self-targeting at the spacer level and the organism level (Fig.2E). A spacer is considered self-targeting in a genome if it has a least one match outside CRISPR arrays in this genome. An organism is considered prone to self-targeting if it has at least one self-targeting spacer in its genome. 
+<br>
 
-![Fig.2](/images/Fig.2_GitHub_update.png)
+![Fig.2](/images/Fig.2_GitHub_update0611.png)
 __Fig.2.__ The calculation of the number of spacers and the number of self-targeting spacers for a toy set of organisms.
 
 <br><br><br>
