@@ -14,6 +14,12 @@ If __a spacer has duplicates in a genome__ then the corresponding file will cont
 If __a target of a self-targeting spacer overlaps with several annotated entries in a genome__ then then the corresponding file will contain a separate line for each of those entries. The values for Target_start_pos, Target_end_pos, Spacer_start_pos, and Spacer_end_pos will be the same for those lines, but the Entry_info, Entry_ID, Entry_start_pos, and Entry_end_pos will be different. 
 
 
+## For example:
+* __Info_CP014265.1.txt__ <br>
+One of the self-targeting spacers has a target that overlaps with two genes.
+
+* __Info_CP027570.1.txt__ and __Info_HE576794.1.txt__ <br>
+One of the self-targeting spacers has duplicates in the same CRISPR array and one target. Therefore, these duplicates aim for the same target. In addition, another self-targeting spacer have two targets in the genome.
 
 
 
