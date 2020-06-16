@@ -15,10 +15,10 @@ If __a target of a self-targeting spacer overlaps with several annotated entries
 
 
 ### For example:
-* __Info_CP014265.1.txt__ <br>
+* __Info_CP014265.1.csv__ <br>
 One of the self-targeting spacers has a target that overlaps with two genes.
 
-* __Info_CP027570.1.txt__ and __Info_HE576794.1.txt__ <br>
+* __Info_CP027570.1.csv__ and __Info_HE576794.1.csv__ <br>
 For each of these genomes, one of the self-targeting spacers has duplicates in the same CRISPR array and only one target that they aim to. Also, another self-targeting spacer have two targets in each of the two genomes.
 
 
